@@ -169,6 +169,30 @@ T extends U? X : Y
 如果类型T可以被赋值给类型U，那么结果类型就是X，否则就是Y
 
 
+ts支持es6模块和commonjs模块
+
+ts-node可以在node端执行ts代码
 
 
+## ts config配置
 
+#### 文件相关的选项
+files: [] 编译器可以编译的单个文件列表
+include: [] 编译需要编译的文件或者目录
+  src/* 只会编译src下的1级目录下的文件
+  src/*/* 只会编译src二级下的文件
+
+exclude: [] 某一个目录或者不需要编译
+
+extends: './tsconfig.base.json' 配置文件可以继承的，可以抽离基础配置，方便复用
+
+compileOnSave: true 在保存文件的时候，编译器自动编译
+
+#### 编译相关选项
+
+
+#### 工程引用 ts3.0
+每一个文件夹都可以根据自己文件夹下的tsconfig.json进行编译
+灵活配置输出目录，还可以使不同工程之间产生依赖关系，有利于把大的项目拆分成小的项目，同时还可以利用增量编译提升编译速度
+
+tsc -b src/server --verbose

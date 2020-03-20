@@ -52,7 +52,8 @@ interface Dog4 {
 type ReadDog = Readonly<Dog4>;
 type PartialDog = Partial<Dog4>;
 type PickDog = Pick<Dog4, "name">;
-type RecordDog = Record<'x' | 'y' | 'z', Dog4>
+type RecordDog = Record<'x' | 'y', any>
+type RecordDog2 = Record<string, any>
 
 type TypeName<T> = 
   T extends string ? 'string': 
