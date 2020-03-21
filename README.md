@@ -196,3 +196,23 @@ compileOnSave: true 在保存文件的时候，编译器自动编译
 灵活配置输出目录，还可以使不同工程之间产生依赖关系，有利于把大的项目拆分成小的项目，同时还可以利用增量编译提升编译速度
 
 tsc -b src/server --verbose
+
+
+
+fork-ts-ckecker-webpack-plugin 
+上面这个插件会把ts的类型检查放在一个独立的线程中进行
+
+awesome-typescript-loader 
+与ts-loader区别   
+1. 更合适与babel集成，使用Babel的转义和缓存  
+2. 不需要安装额外的插件，就可以把类型检查放在独立进程中进行 
+
+如果没有使用babel，首先Typescript自身的编译器(可配合ts-loader使用) 
+如果项目中已经使用了babel，安装@babel/preset-typescript（可配合tsc做类型检查） 
+两种编译工具不要混合使用  
+
+typescript-eslint
+tslint是在ts语法树的基础上工作的
+
+eslint和ts的抽象语法树不兼容
+
