@@ -1,9 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/d3.ts',
+  entry: {
+    'app': './src/index.tsx'
+  },
   output: {
-    filename: 'app.js'
+    filename: '[name].[chunkhash:8].js'
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx']
@@ -25,5 +27,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     })
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  }
 }

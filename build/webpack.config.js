@@ -5,9 +5,4 @@ const proConfig = require('./webpack.pro.config');
 
 // let config = process.env.NODE_ENV === 'development' ? devConfig: proConfig;
 
-// module.exports = merge(baseConfig, config);
-
-module.exports = function(env, config) {
-  let config = argv.mode === 'development' ? devConfig: proConfig;
-  return merge(baseConfig, config);
-}
+module.exports = merge(baseConfig, devConfig);
